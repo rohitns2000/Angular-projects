@@ -1,0 +1,66 @@
+<form #empForm=ngForm (ngSubmit)="addProduct()">
+  <table>
+    <tr>
+      <td>Product ID</td>
+      <td><input type="number" [(ngModel)]="prodId" name="id" id="eid" #idcontrol="ngModel" required/></td>
+
+      <span *ngIf="idcontrol.touched && idcontrol.invalid">Id Should be filled !</span>
+    </tr>
+
+    <tr>
+      <td>Product Name</td>
+      <td><input type="text" [(ngModel)]="prodName" name="name" id="ename" #namecontrol="ngModel" required/></td>
+
+      <span *ngIf="namecontrol.touched && namecontrol.invalid">Name Should be filled !</span>
+    </tr>
+
+    <tr>
+      <td>Product Cost</td>
+      <td><input type="text" [(ngModel)]="prodCost" name="cost" id="ecost" #costcontrol="ngModel" required/></td>
+
+      <span *ngIf="costcontrol.touched && costcontrol.invalid">Cost Should be filled !</span>
+    </tr>
+
+    <tr>
+      <td>Product Online</td>
+      <td>
+        <mat-radio-group [(ngModel)]="prodOnline" name="online" id="eonline" #onlinecontrol="ngModel" required>
+          <mat-radio-button value="Yes" name="yes">Yes</mat-radio-button>
+          <mat-radio-button value="No" name="no">No</mat-radio-button>
+        </mat-radio-group>
+      </td>
+      <span *ngIf="onlinecontrol.touched && onlinecontrol.invalid">Product Online Should be filled !</span>
+    </tr>
+
+    <tr>
+      <td>Product Category</td>
+      <td>
+        <select name="pref" [(ngModel)]="prodCategory" id="epref" #categorycontrol="ngModel" required>
+          <option value="Grocery" name="Grocery">Grocery </option>
+          <option value="Mobile" name="Mobile">Mobile </option>
+          <option value="Electronics&Clothes" name="E&C">Electronics&Clothes </option>
+        </select>
+      </td>
+      <span *ngIf="categorycontrol.touched && categorycontrol.invalid">Category Should be filled !</span>
+    </tr>
+
+    <tr>
+      <td>Available in Store</td>
+      <td>
+        <input type="checkbox" [(ngModel)]="prodStore1" value="BigBazar" name="BB" id="eBB" #storecontrol="ngModel"/>BigBazar
+        <input type="checkbox" [(ngModel)]="prodStore2" value="DMart" name="DM" id="eDM" #storecontrol="ngModel"/>DMart
+        <input type="checkbox" [(ngModel)]="prodStore3" value="Reliance" name="Rel" id="eRel" #storecontrol="ngModel"/>Reliance
+        <input type="checkbox" [(ngModel)]="prodStore4" value="Mega Store" name="MS" id="eMS" #storecontrol="ngModel"/>Mega Store
+      </td>
+      <span *ngIf="storecontrol.touched && categorycontrol.invalid">Category Should be filled !</span>
+    </tr>
+    
+    <tr>
+      <td><input type="submit" value="ADD Employee" [disabled]="empForm.invalid" /></td>
+    </tr>
+  </table>
+</form>
+<!-- <div>{{prodOnline}}{{prodId}}{{prodName}}{{prodCost}}{{prodCategory}}{{prodStore}}</div> -->
+
+
+<div>{{answer}}</div>

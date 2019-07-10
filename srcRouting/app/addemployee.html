@@ -1,0 +1,73 @@
+<h1>Add Employee....</h1>
+ <!---Validation Taking Place ngSubmit is used instead of click event as this is a submit button----->
+
+<!-- <form #empForm=ngForm (ngSubmit)="addData()">
+    <table>
+            <tr>
+                    <td>Employee ID</td>
+                    <td><input type="number" name="id" id="eid" [(ngModel)]="empId" #idcontrol="ngModel" required/></td>
+                   
+                    <span *ngIf="idcontrol.touched && idcontrol.invalid" class="alert alert-danger" role="alert">Id Should be filled !</span>
+            </tr>
+        
+            <tr>
+                    <td>Employee Name</td>
+                    <td><input type="text" [(ngModel)]="empName" name="name" id="ename" #namecontrol="ngModel" required/></td>
+
+                    <span *ngIf="namecontrol.touched && namecontrol.invalid">Name Should be filled !</span>
+            </tr>
+        
+            <tr>
+                    <td>Employee Salary</td>
+                    <td><input type="number" [(ngModel)]="empSalary" name="salary" id="esalary" #salarycontrol="ngModel" required/></td>
+
+                    <span *ngIf="salarycontrol.touched && salarycontrol.invalid">Salary Should be filled !</span>
+            </tr>
+
+            <tr>
+                    <td>Employee Department</td>
+                    <td><input type="text" [(ngModel)]="empDepartment" name="department" id="edepartment" #departmentcontrol="ngModel" required/></td>
+
+                    <span *ngIf="departmentcontrol.touched && departmentcontrol.invalid">Department Should be filled !</span>
+            </tr>
+
+            <tr>
+                    <td><input type="submit" value="ADD Employee" [disabled]="empForm.invalid" class="btn btn-primary"/></td>
+            </tr>
+    </table>
+</form> -->
+
+<!-- <div *ngIf="status">
+        <show [empAll]="empAll"></show>
+</div> -->
+
+
+<form #empForm=ngForm (ngSubmit)="addData()">
+
+    <div class="form-group">
+            <label >Employee ID</label>
+            <input class="form-control" type="number" name="id" id="eid" [(ngModel)]="empId" #idcontrol="ngModel" aria-describedby="idHelp" placeholder="Enter ID" required>
+            <small id="emailHelp" class="form-text text-muted" *ngIf="idcontrol.touched && idcontrol.invalid" role="alert">Id Should be filled !</small>
+    </div>
+
+    <div class="form-group">
+            <label >Employee Name</label>
+            <input class="form-control"  aria-describedby="nameHelp" placeholder="Enter Name" type="text" [(ngModel)]="empName" name="name" id="ename" #namecontrol="ngModel" required>
+            <small id="emailHelp" class="form-text text-muted" *ngIf="namecontrol.touched && namecontrol.invalid">Name Should be filled !</small>
+    </div>
+
+    <div class="form-group">
+            <label >Employee Salary</label>
+            <input class="form-control"  aria-describedby="salaryHelp" placeholder="Enter Salary" type="number" [(ngModel)]="empSalary" name="salary" id="esalary" #salarycontrol="ngModel" required>
+            <small id="emailHelp" class="form-text text-muted" *ngIf="salarycontrol.touched && salarycontrol.invalid">Salary Should be filled !</small>
+    </div>
+
+    <div class="form-group">
+            <label >Employee Designation</label>
+            <input class="form-control"  aria-describedby="departmentHelp" placeholder="Enter Designation" type="text" [(ngModel)]="empDepartment" name="department" id="edepartment" #departmentcontrol="ngModel" required>
+            <small id="emailHelp" class="form-text text-muted" *ngIf="departmentcontrol.touched && departmentcontrol.invalid">Designation Should be filled !</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary" value="ADD Employee" [disabled]="empForm.invalid">Submit</button>
+
+</form>
